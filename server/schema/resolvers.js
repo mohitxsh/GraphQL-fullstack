@@ -38,6 +38,14 @@ const resolvers = {
       return user;
     },
 
+    createMovie: (parent, args) => {
+      const movie = args.input;
+      const lastID = MovieList[MovieList.length - 1].id;
+      movie.id = lastID + 1;
+      MovieList.push(movie);
+      return movie;
+    },
+
     updateUsername: (parent, args) => {
       const { id, newUsername } = args.input;
       let userUpdated;

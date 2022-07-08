@@ -15,7 +15,7 @@ const typeDefs = gql`
     id: ID!
     name: String!
     yearOfPublication: Int!
-    isInTheaters: Boolean!
+    isInTheaters: Boolean
   }
 
   type Query {
@@ -37,8 +37,14 @@ const typeDefs = gql`
     newUsername: String!
   }
 
+  input CreateMovieInput {
+    name: String!
+    yearOfPublication: Int!
+  }
+
   type Mutation {
     createUser(input: CreateUserInput!): User
+    createMovie(input: CreateMovieInput!): Movie
     updateUsername(input: UpdateUsernameInput!): User
     deleteUser(id: ID!): User
   }
