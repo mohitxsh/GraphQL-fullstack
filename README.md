@@ -1,2 +1,2 @@
 # GraphQL-api
-learning graphql api
+a simple graphql api
